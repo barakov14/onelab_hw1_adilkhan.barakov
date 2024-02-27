@@ -22,18 +22,20 @@ export class AuthEffects {
             .pipe(
               map((res) => {
                 console.log('register success')
-                const token = {token: res.idToken}
-                return authActions.authSuccess(token)
+                const data = {token: res.idToken, uuid: res.localId}
+                return authActions.authSuccess(data)
               }),
               catchError((err) => {
                 console.log(err)
-                return of(authActions.loginFailure())
+                console.log(req)
+                return of(authActions.registerFailure())
               })
             )
         })
       ),
     {functional: true}
   )
+
   loginEffect$ = createEffect(
     (actions$ = inject(Actions), http = inject(HttpClient)) =>
       actions$.pipe(
@@ -47,8 +49,8 @@ export class AuthEffects {
             .pipe(
               map((res) => {
                 console.log('login successful')
-                const token = {token: res.idToken}
-                return authActions.authSuccess(token)
+                const data = {token: res.idToken, uuid: res.localId}
+                return authActions.authSuccess(data)
               }),
               catchError((err) => {
                 console.log(err)
@@ -69,7 +71,7 @@ export class AuthEffects {
       return actions$.pipe(
         ofType(authActions.authSuccess),
         tap((action) => {
-          localStorageJWTService.setItem(action.token)
+          localStorageJWTService.setItem(action.token, action.uuid)
           router.navigateByUrl('/home')
         })
       )

@@ -37,5 +37,11 @@ export class RegisterComponent {
     password: new FormControl('', [Validators.required, Validators.min(6)]),
   })
 
-  onRegister() {}
+  onRegister() {
+    const form = {
+      email: this.formGroup.value.email,
+      password: this.formGroup.value.password,
+    }
+    this.authFacade.register(form.email!, form.password!) // ???
+  }
 }

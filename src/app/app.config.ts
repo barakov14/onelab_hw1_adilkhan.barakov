@@ -12,6 +12,8 @@ import {
 } from '@onelab/auth/data-access'
 import {provideEffects} from '@ngrx/effects'
 import {provideStore} from '@ngrx/store'
+import {ProfileEffects} from '../../libs/profile/data-access/src/lib/+state/profile.effects'
+import {profileFeature} from '../../libs/profile/data-access/src/lib/+state/profile.reducer'
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -19,6 +21,7 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(withInterceptors([tokenInterceptor])),
     provideStore({
       [authFeature.name]: authFeature.reducer,
+      [profileFeature.name]: profileFeature.reducer,
     }),
     provideStoreDevtools({
       maxAge: 25,
@@ -31,6 +34,6 @@ export const appConfig: ApplicationConfig = {
       provide: API_URL,
       useValue: environment.api_url,
     },
-    provideEffects(AuthEffects),
+    provideEffects(AuthEffects, ProfileEffects),
   ],
 }

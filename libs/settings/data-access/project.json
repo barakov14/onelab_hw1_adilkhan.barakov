@@ -1,0 +1,9 @@
+{
+  "name": "settingsq",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/settings/data-access/src",
+  "prefix": "onelab-hw1",
+  "tags": [],
+  "projectType": "library",
+  "targets": {}
+}

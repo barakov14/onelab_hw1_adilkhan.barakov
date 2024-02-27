@@ -9,7 +9,7 @@ export const authActions = createActionGroup({
 
     logout: emptyProps(),
 
-    authSuccess: props<{token: string}>(),
+    authSuccess: props<{token: string; uuid: string}>(),
 
     loginFailure: emptyProps(),
     registerFailure: emptyProps(),

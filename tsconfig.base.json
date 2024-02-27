@@ -15,15 +15,19 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@onelab-hw1/home": ["libs/home/src/index.ts"],
+      "@onelab/information": ["libs/information/src/index.ts"],
+      "@onelab/auth": ["libs/auth/feature-auth/src/index.ts"],
       "@onelab/auth/data-access": ["libs/auth/data-access/src/index.ts"],
-      "@onelab/auth/feature-auth": ["libs/auth/feature-auth/src/index.ts"],
       "@onelab/core/api-types": ["libs/core/api-types/src/index.ts"],
       "@onelab/core/data-access": ["libs/core/data-access/src/index.ts"],
       "@onelab/core/http": ["libs/core/http/src/index.ts"],
       "@onelab/home": ["libs/home/src/index.ts"],
       "@onelab/profile": ["libs/profile/feature-profile/src/index.ts"],
       "@onelab/profile/data-access": ["libs/profile/data-access/src/index.ts"],
+      "@onelab/settings": ["libs/settings/feature-settings/src/index.ts"],
+      "@onelab/settings/data-access": [
+        "libs/settings/data-access/src/index.ts"
+      ],
       "@onelab/ui": ["libs/ui/src/index.ts"]
     }
   },

@@ -14,7 +14,7 @@ export const tokenInterceptor = (
   next: HttpHandlerFn
 ): Observable<HttpEvent<any>> => {
   const localStorageJwtService = inject(LocalStorageJwtService)
-  const token: string | null = localStorageJwtService.getItem()
+  const token: string | null = localStorageJwtService.getToken()
   const router = inject(Router)
 
   if (token) {
