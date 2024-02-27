@@ -1,0 +1,9 @@
+{
+  "name": "login",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/auth/feature-auth/src",
+  "prefix": "onelab-hw1",
+  "tags": [],
+  "projectType": "library",
+  "targets": {}
+}

@@ -1,0 +1,9 @@
+{
+  "name": "fsf",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/core/data-access/src",
+  "prefix": "onelab-hw1",
+  "tags": [],
+  "projectType": "library",
+  "targets": {}
+}

@@ -32,7 +32,7 @@
           "error",
           {
             "type": "element",
-            "prefix": "onelab-hw1",
+            "prefix": "onelab",
             "style": "kebab-case"
           }
         ]

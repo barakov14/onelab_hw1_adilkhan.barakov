@@ -1,0 +1,9 @@
+{
+  "name": "profile",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/profile/feature-profile/src",
+  "prefix": "onelab-hw1",
+  "tags": [],
+  "projectType": "library",
+  "targets": {}
+}

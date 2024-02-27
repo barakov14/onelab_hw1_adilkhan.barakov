@@ -1,0 +1,9 @@
+{
+  "name": "header",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/ui/src",
+  "prefix": "onelab-hw1",
+  "tags": [],
+  "projectType": "library",
+  "targets": {}
+}
