@@ -1,1 +1,21 @@
-<p>register works!</p>
+<div class="container">
+  <form class="form" [formGroup]="formGroup" (ngSubmit)="onRegister()">
+    <h2>Regsiter</h2>
+    <p-inputGroup class="form-field">
+      <p-inputGroupAddon>
+        <i class="ri-mail-fill"></i>
+      </p-inputGroupAddon>
+      <input pInputText placeholder="Email" [formControlName]="'email'"/>
+    </p-inputGroup>
+    <p-inputGroup class="form-field">
+      <p-inputGroupAddon>
+        <i class="ri-lock-2-fill"></i>
+      </p-inputGroupAddon>
+      <input pInputText placeholder="Password" [formControlName]="'password'"/>
+    </p-inputGroup>
+    <a class="form-field" [routerLink]="['/login']" >
+      Have an account?
+    </a>
+    <p-button class="btn" label="Sign Up" type="submit"></p-button>
+  </form>
+</div>

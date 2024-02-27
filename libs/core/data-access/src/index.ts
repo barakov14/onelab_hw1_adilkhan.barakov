@@ -1,1 +1,1 @@
-export * from './lib/fsf/fsf.component'
+export * from './lib/loading-status.type'

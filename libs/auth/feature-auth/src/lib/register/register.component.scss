@@ -1,0 +1,21 @@
+.container {
+  margin-top: 200px;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form-field {
+  width: 30%;
+  margin-bottom: 20px;
+}
+
+.form a {
+  text-decoration: none;
+  color: #000;
+}
+.form a:hover {
+  opacity: 0.5;
+  transition: 0.2s ease-in;
+}

@@ -2,7 +2,7 @@ import {ChangeDetectionStrategy, Component} from '@angular/core'
 import {CommonModule} from '@angular/common'
 
 @Component({
-  selector: 'onelab-hw1-profile',
+  selector: 'onelab-profile',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './profile.component.html',

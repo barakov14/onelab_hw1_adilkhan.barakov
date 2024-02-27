@@ -1,1 +1,21 @@
-<p>login works!</p>
+<div class="container">
+  <form class="form" [formGroup]="formGroup" (ngSubmit)="onLogin()">
+    <h2>Login</h2>
+    <p-inputGroup class="form-field">
+      <p-inputGroupAddon>
+        <i class="ri-mail-fill"></i>
+      </p-inputGroupAddon>
+      <input pInputText placeholder="Email" [formControlName]="'email'"/>
+    </p-inputGroup>
+    <p-inputGroup class="form-field">
+      <p-inputGroupAddon>
+        <i class="ri-lock-2-fill"></i>
+      </p-inputGroupAddon>
+      <input pInputText placeholder="Password" [formControlName]="'password'"/>
+    </p-inputGroup>
+    <a class="form-field" [routerLink]="['/register']">
+      Don't have an account?
+    </a>
+    <p-button class="btn" label="Sign In" type="submit"></p-button>
+  </form>
+</div>
