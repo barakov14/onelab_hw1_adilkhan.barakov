@@ -2,14 +2,8 @@ import {ApplicationConfig, isDevMode} from '@angular/core'
 import {provideRouter} from '@angular/router'
 import {appRoutes} from './app.routes'
 import {provideStoreDevtools} from '@ngrx/store-devtools'
-import {API_URL} from '@onelab/core/http'
-import {environment} from '../environments/environment.development'
-import {provideHttpClient, withInterceptors} from '@angular/common/http'
-import {
-  AuthEffects,
-  authFeature,
-  tokenInterceptor,
-} from '@onelab/auth/data-access'
+import {provideHttpClient} from '@angular/common/http'
+import {AuthEffects, authFeature} from '@onelab/auth/data-access'
 import {provideEffects} from '@ngrx/effects'
 import {provideStore} from '@ngrx/store'
 import {ProfileEffects} from '../../libs/profile/data-access/src/lib/+state/profile.effects'
@@ -32,10 +26,6 @@ export const appConfig: ApplicationConfig = {
       trace: false,
       traceLimit: 75,
     }),
-    {
-      provide: API_URL,
-      useValue: environment.api_url,
-    },
     provideEffects(AuthEffects, ProfileEffects),
   ],
 }
