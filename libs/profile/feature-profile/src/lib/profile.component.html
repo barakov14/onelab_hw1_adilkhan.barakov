@@ -1,7 +1,7 @@
-<div *ngIf="(status | async) === 'loading'">
+<div class="spinner" *ngIf="(status | async) === 'loading'">
   <p-progressSpinner ariaLabel="loading" class="spinner"></p-progressSpinner>
 </div>
-<div class="container">
+<div class="container" *ngIf="(user | async) as user">
   <p-avatar [image]="user.image" styleClass="mr-2" size="xlarge" shape="circle"></p-avatar>
   <h1>{{ user.first_name }} {{ user.last_name}}</h1>
   <h2>Professtion: {{ user.profession }}</h2>

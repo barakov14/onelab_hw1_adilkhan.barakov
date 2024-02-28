@@ -1,6 +1,7 @@
 import {createFeature, createReducer, on} from '@ngrx/store'
 import {profileActions} from './profile.actions'
 import {profileInitialState} from '../model/profile.model'
+import {routerNavigationAction} from '@ngrx/router-store'
 
 export const profileFeature = createFeature({
   name: 'profile',
@@ -12,7 +13,7 @@ export const profileFeature = createFeature({
     })),
     on(profileActions.loadUserInformationSuccess, (state, action) => ({
       ...state,
-      prfoileStatus: 'loaded' as const,
+      profileStatus: 'loaded' as const,
       user: action.user,
     }))
   ),

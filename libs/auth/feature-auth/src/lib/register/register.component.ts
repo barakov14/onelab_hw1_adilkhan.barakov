@@ -31,6 +31,7 @@ import {AuthFacade} from '../../../../data-access/src/lib/auth.facade'
 })
 export class RegisterComponent {
   private readonly authFacade = inject(AuthFacade)
+  public status = this.authFacade.selectAuthStatus
 
   public formGroup = new FormBuilder().group({
     email: new FormControl('', [Validators.required, Validators.email]),

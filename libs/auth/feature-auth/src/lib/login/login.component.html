@@ -16,6 +16,6 @@
     <a class="form-field" [routerLink]="['/register']">
       Don't have an account?
     </a>
-    <p-button class="btn" label="Sign In" type="submit"></p-button>
+    <p-button class="btn" [disabled]="(status | async) === 'loading'" label="Sign In" type="submit"></p-button>
   </form>
 </div>

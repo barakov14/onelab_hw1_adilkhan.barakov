@@ -13,17 +13,9 @@ import {AvatarModule} from 'primeng/avatar'
 })
 export class ProfileComponent implements OnInit {
   private readonly profileFacade = inject(ProfileFacade)
-  // public user = this.profileFacade.selectUser
-  public user = {
-    first_name: 'Adilkhan',
-    last_name: 'Barakov',
-    study: 'Suleyman Demirel University',
-    profession: 'Frontend Angular Developer',
-    image:
-      'https://i.pinimg.com/736x/aa/dd/b2/aaddb2cd8cb0c1aa7870c8e333be8e5e.jpg',
-  }
 
   public status = this.profileFacade.selectProfileStatus
+  public user = this.profileFacade.selectUser
 
   ngOnInit() {
     this.profileFacade.loadUser()
