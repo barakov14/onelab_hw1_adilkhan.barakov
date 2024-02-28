@@ -15,6 +15,10 @@ export const profileFeature = createFeature({
       ...state,
       profileStatus: 'loaded' as const,
       user: action.user,
+    })),
+    on(routerNavigationAction, (state) => ({
+      ...state,
+      user: null,
     }))
   ),
 })
