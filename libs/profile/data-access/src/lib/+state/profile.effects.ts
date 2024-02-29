@@ -1,11 +1,11 @@
 import {inject, Injectable} from '@angular/core'
 import {Actions, createEffect, ofType} from '@ngrx/effects'
-import {map, switchMap} from 'rxjs'
+import {catchError, map, of, switchMap} from 'rxjs'
 import {profileActions} from './profile.actions'
 import {User} from '@onelab/core/api-types'
-import {LocalStorageJwtService} from '../../../../../auth/data-access/src/lib/services/local-storage-jwt.service'
+import {LocalStorageJwtService} from '@onelab/auth/data-access'
 import {HttpClient} from '@angular/common/http'
-import {environment} from '../../../../../../src/environments/environment.development'
+import {environment} from 'src/environments/environment.development'
 
 @Injectable({providedIn: 'root'})
 export class ProfileEffects {
@@ -26,6 +26,9 @@ export class ProfileEffects {
               map((user) => {
                 console.log(user)
                 return profileActions.loadUserInformationSuccess({user})
+              }),
+              catchError(() => {
+                return of(profileActions.loadUserInformationFailure())
               })
             )
         )

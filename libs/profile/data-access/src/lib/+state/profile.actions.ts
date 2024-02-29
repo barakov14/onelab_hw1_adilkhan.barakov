@@ -6,5 +6,6 @@ export const profileActions = createActionGroup({
   events: {
     loadUserInformation: emptyProps(),
     loadUserInformationSuccess: props<{user: User}>(),
+    loadUserInformationFailure: emptyProps(),
   },
 })
