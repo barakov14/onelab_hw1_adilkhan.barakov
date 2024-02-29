@@ -1,6 +1,5 @@
 import {inject, Injectable} from '@angular/core'
 import {Actions, createEffect, ofType} from '@ngrx/effects'
-import {ApiService} from '@onelab/core/http'
 import {map, switchMap} from 'rxjs'
 import {profileActions} from './profile.actions'
 import {User} from '@onelab/core/api-types'
